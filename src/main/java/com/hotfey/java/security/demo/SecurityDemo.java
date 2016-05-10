@@ -1,7 +1,7 @@
 package com.hotfey.java.security.demo;
 
-import static com.hotfey.java.security.demo.utils.ConvertUtil.String2byte;
-import static com.hotfey.java.security.demo.utils.ConvertUtil.byte2String;
+import static com.hotfey.java.security.demo.utils.ConvertUtil.parseByte2HexStr;
+import static com.hotfey.java.security.demo.utils.ConvertUtil.parseHexStr2Byte;
 import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -17,11 +17,11 @@ public class SecurityDemo {
     private final static String DES = "DES";
 
     public final static String encrypt(String data, String key) throws Exception {
-        return byte2String(encrypt(data.getBytes(), key.getBytes()));
+        return parseByte2HexStr(encrypt(data.getBytes(), key.getBytes()));
     }
 
     public final static String decrypt(String data, String key) throws Exception {
-        return new String(decrypt(String2byte(data.getBytes()), key.getBytes()));
+        return new String(decrypt(parseHexStr2Byte(data), key.getBytes()));
     }
 
     private static byte[] encrypt(byte[] data, byte[] key) throws Exception {

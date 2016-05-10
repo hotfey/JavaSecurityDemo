@@ -5,10 +5,6 @@
  */
 package com.hotfey.java.security.demo;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -28,7 +24,7 @@ public class SecurityDemoTest {
     @Test
     public void testEncrypt() throws Exception {
         System.out.println("encrypt");
-        String data = "mail@hotfey.com";
+        String data = "mail@hotfey1.com";
         resultEncrypt = SecurityDemo.encrypt(data, key);
         System.out.println(resultEncrypt);
     }
