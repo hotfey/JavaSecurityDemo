@@ -1,5 +1,6 @@
 package com.hotfey.java.security.demo;
 
+import static com.hotfey.java.security.demo.utils.ConvertUtil.parseByte2HexStr;
 import java.security.InvalidKeyException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -95,7 +96,7 @@ public class EncrypRSA {
         byte[] decBytes = rsa.decrypt(privateKey, resultBytes);
 
         System.out.println("明文是:" + msg);
-        System.out.println("加密后是:" + new String(resultBytes));
+        System.out.println("加密后是:" + parseByte2HexStr(resultBytes));
         System.out.println("解密后是:" + new String(decBytes));
     }
 }

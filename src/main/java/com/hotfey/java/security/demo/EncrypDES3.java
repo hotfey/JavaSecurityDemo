@@ -1,5 +1,6 @@
 package com.hotfey.java.security.demo;
 
+import static com.hotfey.java.security.demo.utils.ConvertUtil.parseByte2HexStr;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
@@ -85,7 +86,7 @@ public class EncrypDES3 {
         byte[] encontent = des.Encrytor(msg);
         byte[] decontent = des.Decryptor(encontent);
         System.out.println("明文是:" + msg);
-        System.out.println("加密后:" + new String(encontent));
+        System.out.println("加密后:" + parseByte2HexStr(encontent));
         System.out.println("解密后:" + new String(decontent));
 
     }
